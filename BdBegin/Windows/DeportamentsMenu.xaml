@@ -1,0 +1,27 @@
+﻿<Window x:Class="BdBegin.Windows.DeportamentsMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BdBegin.Windows"
+        mc:Ignorable="d"
+        Title="DeportamentsMenu" Height="214.286" Width="450"
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        Background="CornflowerBlue" ResizeMode="NoResize">
+    <Grid>
+        <Button FontSize="20" Content="Назад" HorizontalAlignment="Left" Margin="339,176,0,0" VerticalAlignment="Top" Width="101" Height="28" Click="Button_Click" RenderTransformOrigin="0.995,1.849"/>
+        <DataGrid   HorizontalAlignment="Left" Height="194" Margin="10,10,0,0" VerticalAlignment="Top" Width="228" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Binding="{Binding OrderNumber}" Header="Номер отделения" Width="110"/>
+                <DataGridTextColumn Binding="{Binding CodSpecial}" Header="Код специальности" Width="117"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button FontSize="17" Content="Добавить" HorizontalAlignment="Left" Margin="339,13,0,0" VerticalAlignment="Top" Width="101" Height="30"/>
+        <Button FontSize="17" Content="Удалить" HorizontalAlignment="Left" Margin="339,48,0,0" VerticalAlignment="Top" Width="101" Height="30"/>
+        <Button FontSize="17" Content="Изменить" HorizontalAlignment="Left" Margin="339,83,0,0" VerticalAlignment="Top" Width="101" Height="30"/>
+        <Button FontSize="10" Content="Найти" HorizontalAlignment="Left" Margin="339,118,0,0" VerticalAlignment="Top" Width="45" Height="16"/>
+        <TextBox HorizontalAlignment="Left" Height="16" Margin="384,118,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="56"/>
+
+    </Grid>
+</Window>

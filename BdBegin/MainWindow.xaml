@@ -1,0 +1,30 @@
+﻿<Window x:Class="BdBegin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BdBegin"
+        mc:Ignorable="d"
+        Title="Database" Height="500" Width="1024"
+        xmlns:gif ="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+        Background="CornflowerBlue"
+    WindowStartupLocation="CenterScreen" Closing="Window_Closing" 
+        BorderBrush="Red" ResizeMode="NoResize"
+        >
+    <Grid Height="420" Width="790">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="376*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="SubButtonCon" FontSize ="25" Content="Авторизация" HorizontalAlignment="Left" Margin="300,35.5,0,0" VerticalAlignment="Top" Width="200" Height="55" Click="ConnectionButton" IsEnabled="True" Grid.Row="1"/>
+        <Button x:Name="SubButtonExit" FontSize ="25" Content="Выход" HorizontalAlignment="Left" Margin="300,270.5,0,0" VerticalAlignment="Top" Width="200" Height="55" Click="ExitButton" IsEnabled="True" Grid.Row="1"/>
+        <Button FontSize="25" Content="Справка" HorizontalAlignment="Left" Margin="300,113.5,0,0" VerticalAlignment="Top" Width="200" Height="55" Click="ReferenceButton" Grid.Row="1"/>
+        <Button FontSize="25" Content="Настройки" HorizontalAlignment="Left" Margin="300,188.5,0,0" VerticalAlignment="Top" Width="200" Height="55" Click="PropertiesButton" Grid.Row="1"/>
+
+        <Image x:Name="GIF2" gif:AnimationBehavior.SourceUri="Resources/2.gif"  HorizontalAlignment="Left" Height="201" Margin="564,55.2,-59,0" VerticalAlignment="Top" Width="285" RenderTransformOrigin="0.5,0.5" Grid.Row="1"/>
+        <Image x:Name="GIF11" gif:AnimationBehavior.SourceUri="Resources/11.gif"  HorizontalAlignment="Left" Height="201" Margin="-56,55.2,0,0" VerticalAlignment="Top" Width="285" RenderTransformOrigin="0.5,0.5" Grid.Row="1"/>
+
+
+
+    </Grid>
+</Window>

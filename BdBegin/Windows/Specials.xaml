@@ -1,0 +1,27 @@
+﻿<Window x:Class="BdBegin.Windows.Specials"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BdBegin.Windows"
+        mc:Ignorable="d"
+        Title="Specials" Height="450" Width="844.366" WindowStyle="None" 
+        Background="CornflowerBlue"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Button FontSize="20" Content="Назад" HorizontalAlignment="Left" Margin="666,371,0,0" VerticalAlignment="Top" Width="138" Height="39" Click="BackButton"/>
+        <DataGrid Name="StudentsGrid" AutoGenerateColumns="False" Margin="0,0,169,0.4">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Cod_Special}" Header="Код специальности" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Name_Special}" Header="Название специальности" Width="151"/>
+                <DataGridTextColumn Binding="{Binding Number_Deportaments}" Header="Номер отделения"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="updateButton" FontSize="20" Content="Обновить" HorizontalAlignment="Left" Margin="666,26,0,0" VerticalAlignment="Top" Width="138" Height="40"/>
+        <Button x:Name="removeButton" FontSize="20" Content="Удалить" HorizontalAlignment="Left" Margin="666,202,-0.8,0" VerticalAlignment="Top" Width="138" Height="40" Click="removeButton_Click"/>
+        <Button x:Name="addButton" FontSize="20" Content="Добавить" HorizontalAlignment="Left" Margin="666,84,-0.8,0" VerticalAlignment="Top" Width="138" Height="40" Click="addButton_Click"/>
+        <Button x:Name="changeButton" FontSize="20" Content="Изменить" HorizontalAlignment="Left" Margin="665,142,0,0" VerticalAlignment="Top" Width="138" Height="40"/>
+        <Button x:Name="searchButton" FontSize="12" Content="Найти" HorizontalAlignment="Left" Margin="666,258,0,0" VerticalAlignment="Top" Width="44" Height="19" Click="searchButton_Click"/>
+        <TextBox x:Name ="SearchText" HorizontalAlignment="Left" Height="19" Margin="715,258,-0.8,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.357,0.537"/>
+    </Grid>
+</Window>

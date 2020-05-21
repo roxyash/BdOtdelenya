@@ -1,0 +1,19 @@
+﻿<Window x:Class="BdBegin.Windows.BackGroundWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BdBegin.Windows"
+        mc:Ignorable="d"
+        Title="BackGroundWindow" Height="351.761" Width="311.972"
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        Background="CornflowerBlue" ResizeMode="NoResize">
+    <Grid Margin="0,0,3.6,3.2">
+        <Button FontSize="25" Content="Default" HorizontalAlignment="Left" Margin="94,44,0,0" VerticalAlignment="Top" Width="111" Height="37" Click="DefaultBG"/>
+        <Button FontSize="25" Content="Blue" HorizontalAlignment="Left" Margin="94,106,0,0" VerticalAlignment="Top" Width="111" Height="37" Click="BlueBG"/>
+        <Button FontSize="25" Content="Yellow" HorizontalAlignment="Left" Margin="94,171,0,0" VerticalAlignment="Top" Width="111" Height="37" Click="YellowBG"/>
+        <Button FontSize="25" Content="Black" HorizontalAlignment="Left" Margin="94,235,0,0" VerticalAlignment="Top" Width="111" Height="37" Click="BlackBG"/>
+        <Button FontSize="15" Content="Назад" HorizontalAlignment="Left" Margin="219,310,0,0" VerticalAlignment="Top" Width="73" Height="22" Click="BackButton"/>
+
+    </Grid>
+</Window>

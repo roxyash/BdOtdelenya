@@ -1,0 +1,34 @@
+﻿<Window x:Class="BdBegin.Windows.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BdBegin.Windows"
+        mc:Ignorable="d"
+        Title="Registration" Height="443.6" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"  WindowStyle="None"
+        Background="CornflowerBlue">
+    <Grid Margin="0,10,0,-0.4">
+        <Button  Background="Black" Foreground="White" FontSize="19" Content="Зарегестрироваться" HorizontalAlignment="Left" Margin="285,337,0,0" VerticalAlignment="Top" Width="190" Height="30" Click="SignIn"/>
+        <TextBox x:Name="email" HorizontalAlignment="Left" Height="20" Margin="308,306,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251" Loaded="email_Loaded" PreviewMouseDown="email_PreviewMouseDown" />
+        <TextBox x:Name ="login" HorizontalAlignment="Left" Height="20" Margin="308,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251" PreviewMouseDown="login_PreviewMouseDown" Loaded="login_Loaded" MouseEnter="login_MouseEnter" />
+        <Label FontSize="25" Content="Логин" HorizontalAlignment="Left" Margin="222,192,0,0" VerticalAlignment="Top" Height="46" Width="77"/>
+        <Label FontSize="25" Content="Пароль" HorizontalAlignment="Left" Margin="208,224,0,0" VerticalAlignment="Top" Height="40" Width="95"/>
+        <Label FontSize="25" Content="Повторите пароль" HorizontalAlignment="Left" Margin="78,259,0,0" VerticalAlignment="Top" Height="40" Width="221"/>
+        <Label FontSize="25" Content="Почта" HorizontalAlignment="Left" Margin="222,294,0,0" VerticalAlignment="Top" Height="40" Width="81"/>
+        <!--<ContentControl Width="16" Height="16" Margin="560,238,224,195.6" Content="{StaticResource eye.png}"/>-->
+        <PasswordBox x:Name="pw" HorizontalAlignment="Left" Margin="308,239,0,0" VerticalAlignment="Top" Width="251" Height="20" MouseEnter="pw_MouseEnter" />
+        <PasswordBox x:Name="repeatpw" HorizontalAlignment="Left" Margin="308,271,0,0" VerticalAlignment="Top" Width="251" Height="20" />
+        <Button Foreground="White" Background="black" FontSize="18" Content="Назад" HorizontalAlignment="Left" Margin="497,337,0,0" VerticalAlignment="Top" Width="87" Click="ShutDownButton" Height="30"/>
+        <TextBox x:Name ="LastName" HorizontalAlignment="Left" Height="20" Margin="308,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251" Loaded="LastName_Loaded" PreviewMouseDown="LastName_PreviewMouseDown" />
+        <Label FontSize="25" Content="Фамилия" HorizontalAlignment="Left" Margin="188,133,0,0" VerticalAlignment="Top" Height="43" Width="111"/>
+        <Label FontSize="25" Content="Имя" HorizontalAlignment="Left" Margin="240,99,0,0" VerticalAlignment="Top" Height="39" Width="59"/>
+        <TextBox x:Name ="FirstName" HorizontalAlignment="Left" Height="20" Margin="308,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251" Loaded="FirstName_Loaded" PreviewMouseDown="FirstName_PreviewMouseDown" />
+        <Label FontSize="40" Content="Регистрация" HorizontalAlignment="Left" Margin="308,28,0,0" VerticalAlignment="Top" Height="62" Width="259"/>
+        <Label FontSize="25" Content="Пол" HorizontalAlignment="Left" Margin="243,163,0,0" VerticalAlignment="Top" Height="48" Width="111"/>
+        <RadioButton x:Name="Girl" Content="Женский" HorizontalAlignment="Left" Margin="411,180,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Man" Content="Мужской" HorizontalAlignment="Left" Margin="308,180,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+
+</Window>
+    

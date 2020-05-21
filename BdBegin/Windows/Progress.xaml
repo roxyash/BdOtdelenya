@@ -1,0 +1,31 @@
+﻿<Window x:Class="BdBegin.Windows.Progress"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BdBegin.Windows"
+        mc:Ignorable="d"
+        Title="Progress" Height="325.715" Width="540"
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        Background="CornflowerBlue" ResizeMode="NoResize">
+    <Grid>
+        <Button FontSize="17" Content="Назад" HorizontalAlignment="Left" Margin="456,282,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.175,0.13" Height="27" Click="Button_Click"/>
+        <DataGrid  Name="ProgressGrid" HorizontalAlignment="Left" Height="299" Margin="25,10,0,0" VerticalAlignment="Top" Width="297" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Discipline}" Header="Дисциплина" Width="100"/>
+                <DataGridTextColumn Binding="{Binding NameTeacher}" Header="Преподаватель" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Ocenka}" Header="Оценка" Width="100"/>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button FontSize="17" Content="Добавить" HorizontalAlignment="Left" Margin="402,50,0,0" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.175,0.13" Height="29" Click="Button_Click"/>
+        <Button FontSize="17" Content="Удалить" HorizontalAlignment="Left" Margin="402,79,0,0" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.175,0.13" Height="29" Click="Button_Click"/>
+        <Button FontSize="17" Content="Изменить" HorizontalAlignment="Left" Margin="402,109,0,0" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.175,0.13" Height="30" Click="Button_Click"/>
+        <Button FontSize="10" Content="Найти" HorizontalAlignment="Left" Margin="402,171,0,0" VerticalAlignment="Top" Width="41" RenderTransformOrigin="0.175,0.13" Height="19" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="19" Margin="448,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="82"/>
+        <Button FontSize="17" Content="Печать" HorizontalAlignment="Left" Margin="402,20,0,0" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.175,0.13" Height="29" Click="Button_Click"/>
+        <Button FontSize="17" Content="Выслать Email" HorizontalAlignment="Left" Margin="402,141,0,0" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.175,0.13" Height="29" Click="Button_Click"/>
+
+    </Grid>
+</Window>
