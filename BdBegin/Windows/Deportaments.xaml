@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BdBegin.Windows"
         mc:Ignorable="d"
-        Title="Deportaments" Height="524.254" Width="1070.768" 
+        Title="Deportaments" Height="580.654" Width="1230.368" 
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         Background="CornflowerBlue" ResizeMode="NoResize" 
         >
@@ -14,24 +14,31 @@
             <ColumnDefinition Width="630*"/>
             <ColumnDefinition Width="173*"/>
         </Grid.ColumnDefinitions>
-        <Button FontSize="20" Content="Назад" HorizontalAlignment="Left" Margin="325.6,333,-233.2,0" VerticalAlignment="Top" Width="138" Height="39" Click="BackButton" Grid.Column="1"/>
-        <DataGrid   HorizontalAlignment="Left" Height="455" Margin="-241,-47,-0.2,-36" VerticalAlignment="Top" Width="774" AutoGenerateColumns="False" Name="DeportamentsGrid" MouseDoubleClick="DeportamentsGrid_MouseDoubleClick_1" Grid.ColumnSpan="2"  >
+        <Button FontSize="20" Content="Назад" HorizontalAlignment="Left" Margin="408,345,-281.2,-12" VerticalAlignment="Top" Width="138" Height="39" Click="BackButton" Grid.Column="1"/>
+        <DataGrid   HorizontalAlignment="Left" Height="461" Margin="-326,-47,-63.2,-42" VerticalAlignment="Top" Width="922" AutoGenerateColumns="False" Name="DeportamentsGrid" MouseDoubleClick="DeportamentsGrid_MouseDoubleClick_1" Grid.ColumnSpan="2"  >
             <DataGrid.Columns>
 
                 <DataGridTextColumn Binding="{Binding OrderNumber}" Header="Номер студента" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Group}" Header="Группа" Width="100"/>
                 <DataGridTextColumn Binding="{Binding FirstName}" Header="Имя" Width="100"/>
                 <DataGridTextColumn Binding="{Binding MidName}" Header="Отчество" Width="100"/>
                 <DataGridTextColumn Binding="{Binding LastName}" Header="Фамилия" Width="100"/>
+
                 <DataGridTextColumn Binding="{Binding BirthDay, StringFormat='{}{0:dd.MM.yyyy}'}" Header="Дата рождения" Width="100"/>
                 <DataGridTextColumn Binding="{Binding Address}" Header="Адрес" Width="100"/>
+
+
                 <DataGridTextColumn Binding="{Binding Course}" Header="Курс" Width="100"/>
+                <DataGridTextColumn Binding="{Binding AbsScore}" Header="Средний балл" Width="100"/>
+
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="removeButton" FontSize="20" Content="Удалить" HorizontalAlignment="Left" Margin="326.6,61,-234.2,0" VerticalAlignment="Top" Width="138" Height="40" Grid.Column="1"/>
-        <Button x:Name="addButton" FontSize="20" Content="Добавить" HorizontalAlignment="Left" Margin="325.6,-29,-233.2,0" VerticalAlignment="Top" Width="138" Height="40" Click="addButton_Click" Grid.Column="1"/>
-        <Button x:Name="searchButton" FontSize="12" Content="Найти" HorizontalAlignment="Left" Margin="326.6,114,-140.2,0" VerticalAlignment="Top" Width="44" Height="19" Click="searchButton_Click" Grid.Column="1"/>
-        <Button x:Name="changeButton" FontSize="20" Content="Изменить" HorizontalAlignment="Left" Margin="326.6,16,-234.2,0" VerticalAlignment="Top" Width="138" Height="40" Grid.Column="1" Click="changeButton_Click"/>
-        <TextBox Name ="SearchText" Grid.Column="1" HorizontalAlignment="Left" Height="19" Margin="375.6,114,-234.2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.357,0.537"/>
+        <Button x:Name="removeButton" FontSize="20" Content="Удалить" HorizontalAlignment="Left" Margin="409,73,-282.2,0" VerticalAlignment="Top" Width="138" Height="40" Grid.Column="1"/>
+        <Button x:Name="addButton" FontSize="20" Content="Добавить" HorizontalAlignment="Left" Margin="408,-17,-281.2,0" VerticalAlignment="Top" Width="138" Height="40" Click="addButton_Click" Grid.Column="1"/>
+        <Button x:Name="changeButton" FontSize="20" Content="Изменить" HorizontalAlignment="Left" Margin="409,28,-282.2,0" VerticalAlignment="Top" Width="138" Height="40" Grid.Column="1" Click="changeButton_Click"/>
+        <TextBox Name ="SearchText" Grid.Column="1" HorizontalAlignment="Left" Height="19" Margin="409,201,-281.2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.357,0.537"/>
+        <Button FontSize="20" Content="Группы" Grid.Column="1" HorizontalAlignment="Left" Margin="408,118,-281.2,0" VerticalAlignment="Top" Width="138" Height="34" Click="ButtonGroup"/>
+        <Label FontSize="20" Content="Поиск" Grid.Column="1" HorizontalAlignment="Center" Margin="442,159,-247.2,0" VerticalAlignment="Top" Width="70"/>
     </Grid>
 </Window>

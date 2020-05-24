@@ -5,23 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BdBegin.Windows"
         mc:Ignorable="d"
-        Title="OneStudents" Height="339.184" Width="782.008"
+        Title="OneStudents" Height="372.331" Width="793.057"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         Background="CornflowerBlue" ResizeMode="NoResize">
     <Grid>
         <Label FontSize="30" Foreground="Black" Content="Данные о студентe:" HorizontalAlignment="Center" Margin="272,10,227.4,0" VerticalAlignment="Top" Width="283"/>
-        <Label FontSize="20" Content="ФИО:" HorizontalAlignment="Left" Margin="58,82,0,0" VerticalAlignment="Top"/>
-        <Label FontSize="20" Content="Дата рождения:" HorizontalAlignment="Left" Margin="58,116,0,0" VerticalAlignment="Top"/>
-        <Label FontSize="20" Content="Адрес:" HorizontalAlignment="Left" Margin="58,150,0,0" VerticalAlignment="Top"/>
-        <Label FontSize="20" Content="Курс:" HorizontalAlignment="Left" Margin="58,184,0,0" VerticalAlignment="Top"/>
-        <Label FontSize="20" Content="Группа:" HorizontalAlignment="Left" Margin="58,217,0,0" VerticalAlignment="Top"/>
-        <Button FontSize="20" Content="Назад" HorizontalAlignment="Left" Margin="26,285,0,0" VerticalAlignment="Top" Width="88" Height="34" Click="Button_Click_1" RenderTransformOrigin="0.425,1.988"/>
-        <Label Background="White" FontSize="17" Name="Name" Content="" HorizontalAlignment="Left" Margin="218,85,0,0" VerticalAlignment="Top" Width="513" Height="32"/>
-        <Label Background="White" FontSize="17" x:Name ="Address"  Content="" HorizontalAlignment="Left" Margin="218,152,0,0" VerticalAlignment="Top" Width="513" Height="32"/>
-        <Label Background="White" FontSize="17" x:Name ="Course" Content="" HorizontalAlignment="Left" Margin="218,186,0,0" VerticalAlignment="Top" Width="513" Height="32"/>
-        <Label Background="White" FontSize="17" x:Name ="Birthday"  Content="" HorizontalAlignment="Left" Margin="218,118,0,0" VerticalAlignment="Top" Width="513" Height="32"/>
-        <Button FontSize="17" Content="Успеваемость" HorizontalAlignment="Left" Margin="635,287,0,0" VerticalAlignment="Top" Width="127" Height="34" Click="Button_Click"/>
-        <Label Background="White" FontSize="17" x:Name ="Course_Copy" Content="" HorizontalAlignment="Left" Margin="218,219,0,0" VerticalAlignment="Top" Width="513" Height="32"/>
+        <Label FontSize="20" Content="ФИО:" HorizontalAlignment="Left" Margin="58,66,0,0" VerticalAlignment="Top"/>
+        <Label FontSize="20" Content="Дата рождения:" HorizontalAlignment="Left" Margin="58,100,0,0" VerticalAlignment="Top"/>
+        <Label FontSize="20" Content="Адрес:" HorizontalAlignment="Left" Margin="58,134,0,0" VerticalAlignment="Top"/>
+        <Label FontSize="20" Content="Курс:" HorizontalAlignment="Left" Margin="58,168,0,0" VerticalAlignment="Top"/>
+        <Label FontSize="20" Content="Группа:" HorizontalAlignment="Left" Margin="58,201,0,0" VerticalAlignment="Top"/>
+        <Button FontSize="20" Content="Назад" HorizontalAlignment="Left" Margin="26,295,0,0" VerticalAlignment="Top" Width="88" Height="34" Click="Button_Click_1" RenderTransformOrigin="0.425,1.988"/>
+        <Label Background="White" FontSize="17" Name="Name" Content="" HorizontalAlignment="Left" Margin="218,69,0,0" VerticalAlignment="Top" Width="513" Height="32"/>
+        <Label Background="White" FontSize="17" x:Name ="Address"  Content="" HorizontalAlignment="Left" Margin="218,136,0,0" VerticalAlignment="Top" Width="513" Height="32"/>
+        <Label Background="White" FontSize="17" x:Name ="Course" Content="" HorizontalAlignment="Left" Margin="218,170,0,0" VerticalAlignment="Top" Width="513" Height="32"/>
+        <Label Background="White" FontSize="17" x:Name ="Birthday"  Content="" HorizontalAlignment="Left" Margin="218,102,0,0" VerticalAlignment="Top" Width="513" Height="32"/>
+        <Button FontSize="17" Content="Успеваемость" HorizontalAlignment="Left" Margin="643,295,0,0" VerticalAlignment="Top" Width="127" Height="34" Click="Button_Click"/>
+        <Label Background="White" FontSize="17" x:Name ="Group" Content="" HorizontalAlignment="Left" Margin="218,203,0,0" VerticalAlignment="Top" Width="513" Height="32"/>
+        <Label FontSize="20" Content="Средний балл:" HorizontalAlignment="Left" Margin="57,235,0,0" VerticalAlignment="Top"/>
+        <Label Background="White" FontSize="17" x:Name ="AbsScore" Content="" HorizontalAlignment="Left" Margin="217,237,0,0" VerticalAlignment="Top" Width="513" Height="32"/>
 
     </Grid>
 </Window>

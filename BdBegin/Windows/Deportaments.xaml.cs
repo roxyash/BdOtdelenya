@@ -15,6 +15,8 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
+using BdBegin.Models;
+using BdBegin.Data;
 
 namespace BdBegin.Windows
 {
@@ -23,14 +25,17 @@ namespace BdBegin.Windows
     /// </summary>
     public partial class Deportaments : Window
     {
+        private readonly IDataApp _dataApp;
         private const string _conString = @"Data Source=DESKTOP-TAH07PT; Initial Catalog=Karataev; Integrated Security=True";
-        private ObservableCollection<StudentsClass> _tempStudents;
+        private ObservableCollection<Student> _tempStudents;
         //public ET DataBase = new ET();
         public Deportaments()
         {
             InitializeComponent();
-            StudentsList = new ObservableCollection<StudentsClass>();
-            _tempStudents = new ObservableCollection<StudentsClass>();
+
+            _dataApp = ((App)Application.Current).DataApp;
+            StudentsList = new ObservableCollection<Student>();
+            _tempStudents = new ObservableCollection<Student>();
             LoadStudents();
 
             this.PreviewKeyDown += Deportaments_PreviewKeyDown;
@@ -52,7 +57,7 @@ namespace BdBegin.Windows
             list.ForEach(StudentsList.Add);
         }
 
-        public ObservableCollection<StudentsClass> StudentsList { get; } 
+        public ObservableCollection<Student> StudentsList { get; } 
 
         private void BackButton(object sender, RoutedEventArgs e)
         {
@@ -71,47 +76,52 @@ namespace BdBegin.Windows
                 StudentsList.Clear();
                 _tempStudents.Clear();
             }
-                
 
-            try
-            {
-                using (var cnn = new SqlConnection(_conString))
-                using (var cmd = cnn.CreateCommand())
-                {
-                    cmd.CommandText = @"SELECT [Number_Students]
-                                             , [First_Name_Students]
-                                             , [Mid_Name_Students]
-                                             , [Last_Name_Students]
-                                             , [Address_Students]
-                                             , [Course_Students]
-                                             , [Birthday_Students]
-                                        FROM Students;";
-                    cnn.Open();
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            var student = GetStudentsClassFromReader(reader);
-                            StudentsList.Add(student);
-                            _tempStudents.Add(student);
-                        }
-                    }
 
-                    SetOrderNumbers();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    using (var cnn = new SqlConnection(_conString))
+            //    using (var cmd = cnn.CreateCommand())
+            //    {
+            //        cmd.CommandText = @"SELECT [Number_Students]
+            //                                 , [First_Name_Students]
+            //                                 , [Mid_Name_Students]
+            //                                 , [Last_Name_Students]
+            //                                 , [Address_Students]
+            //                                 , [Course_Students]
+            //                                 , [Birthday_Students]
+            //                            FROM Students;";
+            //        cnn.Open();
+            //        using (var reader = cmd.ExecuteReader())
+            //        {
+            //            while (reader.Read())
+            //            {
+            //                var student = GetStudentsClassFromReader(reader);
+            //                StudentsList.Add(student);
+            //                _tempStudents.Add(student);
+            //            }
+            //        }
+
+            //        SetOrderNumbers();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
+            List<Student> students = _dataApp.Students.GetAll();
+            students.ForEach(StudentsList.Add);
+            students.ForEach(_tempStudents.Add);
+            SetOrderNumbers();
 
             DeportamentsGrid.ItemsSource = StudentsList;
             removeButton.Click += removeButton_Click;
         }
 
-        private StudentsClass GetStudentsClassFromReader(SqlDataReader reader)
+        private Student GetStudentsClassFromReader(SqlDataReader reader)
         {
-            return new StudentsClass(reader.GetInt32(0))
+            return new Student(reader.GetInt32(0))
             {
                 FirstName = reader.IsDBNull(1) ?
                             "Неизвестно" : reader.GetString(1),
@@ -130,7 +140,17 @@ namespace BdBegin.Windows
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            var std = DeportamentsGrid.SelectedItem as StudentsClass;
+            //var std = DeportamentsGrid.SelectedItem as StudentsClass;
+            var std = new Student(0)
+            {
+                FirstName = "имя",
+                LastName = "фамилия",
+                MidName = "отчество",
+                Address = "адрес",
+                Group = "группа",
+                Course = 0,
+                BirthDay = DateTime.Today
+            };
             Windows.AddStudents addStudentsObject = new Windows.AddStudents(std);
             addStudentsObject.Visibility = Visibility.Visible;
             this.Close();
@@ -201,44 +221,60 @@ namespace BdBegin.Windows
 
         private void removeButton_Click(object sender, RoutedEventArgs e)
         {
-            var person = DeportamentsGrid.SelectedItem as StudentsClass;
+            var person = DeportamentsGrid.SelectedItem as Student;
             if (person == null)
                 return;
 
-            try
-            {
-                using (var cnn = new SqlConnection(_conString))
-                using (var cmd = cnn.CreateCommand())
-                {
-                    cmd.CommandText = "DELETE FROM Students WHERE Number_Students = @id";
-                    cmd.Parameters.AddWithValue("@id", person.NumberStudents);
-                    cnn.Open();
-                    var deleted = cmd.ExecuteNonQuery();
-                    Trace.WriteLine($"Удалено {deleted}");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    using (var cnn = new SqlConnection(_conString))
+            //    using (var cmd = cnn.CreateCommand())
+            //    {
+            //        cmd.CommandText = "DELETE FROM Students WHERE Number_Students = @id";
+            //        cmd.Parameters.AddWithValue("@id", person.Id);
+            //        cnn.Open();
+            //        var deleted = cmd.ExecuteNonQuery();
+            //        Trace.WriteLine($"Удалено {deleted}");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
+            _dataApp.Students.Remove(person.Id);
+
             LoadStudents();
         }
 
 
         private void DeportamentsGrid_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
         {
-            Windows.OneStudents OneStudentsObj = new OneStudents((StudentsClass)DeportamentsGrid.SelectedItem);
+            Windows.OneStudents OneStudentsObj = new OneStudents((Student)DeportamentsGrid.SelectedItem);
             OneStudentsObj.Visibility = Visibility.Visible;
             this.Close();
         }
 
         private void changeButton_Click(object sender, RoutedEventArgs e)
         {
-            var std = DeportamentsGrid.SelectedItem as StudentsClass;
+            if(DeportamentsGrid.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите студента");
+                return;
+            }
+            var std = DeportamentsGrid.SelectedItem as Student;
             var AddStudents = new AddStudents(std);
             
             AddStudents.Visibility = Visibility.Visible;
             this.Close();
+        }
+
+        private void ButtonGroup(object sender, RoutedEventArgs e)
+        {
+            Windows.Groups DeportamentsObject = new Windows.Groups();
+            DeportamentsObject.Visibility = Visibility.Visible;
+            this.Close();
+
         }
     }
 }

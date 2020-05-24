@@ -87,10 +87,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\IDataApp.cs" />
+    <Compile Include="Data\IDiscipline.cs" />
+    <Compile Include="Data\IProgress.cs" />
+    <Compile Include="Data\ISpecializationData.cs" />
+    <Compile Include="Data\IStudentData.cs" />
+    <Compile Include="Data\ITeacherData.cs" />
+    <Compile Include="Data\TestData\TestDataApp.cs" />
+    <Compile Include="Data\TestData\TestDisciplines.cs" />
+    <Compile Include="Data\TestData\TestProgress.cs" />
+    <Compile Include="Data\TestData\TestSpecializations.cs" />
+    <Compile Include="Data\TestData\TestStudents.cs" />
+    <Compile Include="Data\TestData\TestTeachers.cs" />
+    <Compile Include="Models\Discipline.cs" />
+    <Compile Include="Models\Progress.cs" />
+    <Compile Include="Models\Specialization.cs" />
+    <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\StudentResult.cs" />
+    <Compile Include="Windows\AddProgress.xaml.cs">
+      <DependentUpon>AddProgress.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\AddSpecial.xaml.cs">
       <DependentUpon>AddSpecial.xaml</DependentUpon>
@@ -110,8 +130,11 @@
     <Compile Include="Windows\Deportaments.xaml.cs">
       <DependentUpon>Deportaments.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\DeportamentsMenu.xaml.cs">
-      <DependentUpon>DeportamentsMenu.xaml</DependentUpon>
+    <Compile Include="Windows\FirsthGroup.xaml.cs">
+      <DependentUpon>FirsthGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Groups.xaml.cs">
+      <DependentUpon>Groups.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\OneStudents.xaml.cs">
       <DependentUpon>OneStudents.xaml</DependentUpon>
@@ -129,13 +152,10 @@
     <Compile Include="Windows\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Windows\Specials.xaml.cs">
       <DependentUpon>Specials.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\StudentsAll.xaml.cs">
-      <DependentUpon>StudentsAll.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\StudentsClass.cs" />
     <Compile Include="Windows\Teachers.xaml.cs">
       <DependentUpon>Teachers.xaml</DependentUpon>
     </Compile>
@@ -151,6 +171,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\AddProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AddSpecial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,7 +199,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\DeportamentsMenu.xaml">
+    <Page Include="Windows\FirsthGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Groups.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,10 +228,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Specials.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\StudentsAll.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -296,6 +320,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Point.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lupa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

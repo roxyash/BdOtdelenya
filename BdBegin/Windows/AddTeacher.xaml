@@ -5,26 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BdBegin.Windows"
         mc:Ignorable="d"
-        Title="AddSpecial" Height="472.229" Width="426.057"
+        Title="AddSpecial" Height="171.829" Width="418.457"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         Background="CornflowerBlue" ResizeMode="NoResize">
     <Grid Margin="0,0,0.2,-0.4">
-        <Button FontSize="20" Content="Назад" HorizontalAlignment="Left" Margin="29,393,0,0" VerticalAlignment="Top" Width="95" Height="45" Click="BackButton"/>
-        <Button FontSize="20" Content="Добавить" HorizontalAlignment="Left" Margin="275,393,0,0" VerticalAlignment="Top" Width="131" Height="45" RenderTransformOrigin="0.36,0.495" Click="AddSpecialsButton"/>
-        <Label FontSize="20" Content="Код преподавателя:" HorizontalAlignment="Left" Margin="29,73,0,0" VerticalAlignment="Top" Width="205"/>
-        <Label FontSize="20" Content="Имя:" HorizontalAlignment="Left" Margin="27,115,0,0" VerticalAlignment="Top" Width="281"/>
-        <Label FontSize="20" Content="Фамилия:" HorizontalAlignment="Left" Margin="27,157,0,0" VerticalAlignment="Top" Width="193"/>
-        <TextBox Name="CodTeacher" HorizontalAlignment="Left" Height="23" Margin="286,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="NameTeacher" HorizontalAlignment="Left" Height="23" Margin="286,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="LastNameTeacher" HorizontalAlignment="Left" Height="23" Margin="286,169,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label FontSize="20" Content="Таблица преподавателей" HorizontalAlignment="Left" Margin="108,17,0,0" VerticalAlignment="Top"/>
-        <Label FontSize="20" Content="Отчество:" HorizontalAlignment="Left" Margin="29,197,0,0" VerticalAlignment="Top" Width="205"/>
-        <Label FontSize="20" Content="Адресс:" HorizontalAlignment="Left" Margin="27,239,0,0" VerticalAlignment="Top" Width="281"/>
-        <Label FontSize="20" Content="Код предмета:" HorizontalAlignment="Left" Margin="27,281,0,0" VerticalAlignment="Top" Width="193"/>
-        <Label FontSize="20" Content="Номер группы:" HorizontalAlignment="Left" Margin="27,327,0,0" VerticalAlignment="Top" Width="193"/>
-        <TextBox x:Name="MidNameTeacher" HorizontalAlignment="Left" Height="23" Margin="286,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="AddressTeacher" HorizontalAlignment="Left" Height="23" Margin="286,251,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="CodSubject" HorizontalAlignment="Left" Height="23" Margin="286,293,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="NumberGroups" HorizontalAlignment="Left" Height="23" Margin="286,335,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button FontSize="20" Content="Назад" HorizontalAlignment="Left" Margin="27,133,0,0" VerticalAlignment="Top" Width="97" Height="28" Click="BackButton"/>
+        <Button FontSize="20" Content="Сохранить" HorizontalAlignment="Left" Margin="286,133,0,0" VerticalAlignment="Top" Width="120" Height="28" RenderTransformOrigin="0.36,0.495" Click="AddTeachersButton"/>
+        <Label FontSize="20" Content="Имя:" HorizontalAlignment="Left" Margin="27,39,0,0" VerticalAlignment="Top" Width="281"/>
+        <Label FontSize="20" Content="Фамилия:" HorizontalAlignment="Left" Margin="27,62,0,0" VerticalAlignment="Top" Width="193"/>
+        <TextBox Name="NameTeacher" HorizontalAlignment="Left" Height="23" Margin="286,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="LastNameTeacher" HorizontalAlignment="Left" Height="23" Margin="286,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="MidNameTeacher" HorizontalAlignment="Left" Height="23" Margin="286,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label FontSize="20" Content="Таблица преподавателей" HorizontalAlignment="Left" Margin="102,6,0,0" VerticalAlignment="Top"/>
+        <Label FontSize="20" Content="Отчество:" HorizontalAlignment="Left" Margin="27,84,0,0" VerticalAlignment="Top" Width="205"/>
+
     </Grid>
 </Window>

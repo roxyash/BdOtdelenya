@@ -68,18 +68,8 @@ namespace BdBegin.Windows
             this.Close();
         }
 
-        private void StudentsAllButton(object sender, RoutedEventArgs e)
-        {
-            StudentsAll studentsAllobject = new StudentsAll();
-            this.Visibility = Visibility.Collapsed;
-            studentsAllobject.Show();
-        }
 
-        private void DeportamentsButton(object sender, RoutedEventArgs e)
-        {
-            Windows.DeportamentsMenu DeportamentsMenuObj = new Windows.DeportamentsMenu();
-            DeportamentsMenuObj.Visibility = Visibility.Visible;
-            this.Close();
-        }
+
+        
     }
 }

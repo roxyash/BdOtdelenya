@@ -46,13 +46,12 @@ namespace BdBegin.Windows
             while (dr.Read())
             {
                 count++;
-
             }
 
-          
-          
-         
 
+
+
+            
             if (count==1)
             {
                 MessageBox.Show($"Здравствуйте {Log}!");
@@ -61,6 +60,16 @@ namespace BdBegin.Windows
             }
             if (count < 1)
             {
+                //if(Log.Length<5 && Log.Length>12)
+                //{
+                //    MessageBox.Show("Логин должен содержать от 6 до 11 символов");
+                //    return;
+                //}
+                //if(pw.Length < 8 && pw.Length>16)
+                //{
+                //    MessageBox.Show("Пароль должен содержать от 9 до 15 символов");
+                //    return;
+                //}
                 MessageBox.Show("Логин или пароль не правильный");
                 Login.Clear();
                 Password.Clear();

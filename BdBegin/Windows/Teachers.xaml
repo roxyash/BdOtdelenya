@@ -5,32 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BdBegin.Windows"
         mc:Ignorable="d"
-        Title="Teachers" Height="475.6" Width="959.706" WindowStyle="None" 
+        Title="Teachers" Height="360.96" Width="707.189" WindowStyle="None" 
         Background="CornflowerBlue"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="367*"/>
-            <ColumnDefinition Width="53*"/>
-            <ColumnDefinition Width="21*"/>
-        </Grid.ColumnDefinitions>
-        <Button FontSize="20" Content="Назад" HorizontalAlignment="Left" Margin="23.4,337,-25.4,0" VerticalAlignment="Top" Width="138" Height="39" Click="BackButton" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <DataGrid Name="TeachersGrid" Margin="0,0,32.4,0" AutoGenerateColumns="False">
+
+
+        <DataGrid Name="TeachersGrid" Margin="-218,-3,-28.4,0.4" AutoGenerateColumns="False">
             <DataGrid.Columns >
-                <DataGridTextColumn Binding="{Binding Cod_Teacher}" Header="Код учителя" Width="100"/>
-                <DataGridTextColumn Binding="{Binding First_Name_Teacher}" Header="Имя"  Width="100"/>
-                <DataGridTextColumn Binding="{Binding Mid_Name_Teacher}" Header="Отчество"  Width="100"/>
-                <DataGridTextColumn Binding="{Binding Last_Name_Teacher}" Header="Фамилия"  Width="100"/>
-                <DataGridTextColumn Binding="{Binding Address_Teacher}" Header="Адрес"  Width="100"/>
-                <DataGridTextColumn Binding="{Binding Cod_Subject}" Header="Код дисциплины"  Width="100" />
-                <DataGridTextColumn Binding="{Binding Number_Group}" Header="Номер группы" Width="100" />
+                <DataGridTextColumn Binding="{Binding Id}" Header="Код учителя" Width="100"/>
+                <DataGridTextColumn Binding="{Binding FirstName}" Header="Имя"  Width="100"/>
+                <DataGridTextColumn Binding="{Binding MiddleName}" Header="Отчество"  Width="100"/>
+                <DataGridTextColumn Binding="{Binding LastName}" Header="Фамилия"  Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="updateButton" FontSize="20" Content="Обновить" HorizontalAlignment="Left" Margin="23.4,-1,-25.4,0" VerticalAlignment="Top" Width="138" Height="40" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Button x:Name="removeButton" FontSize="20" Content="Удалить" HorizontalAlignment="Left" Margin="23.4,179,-25.4,0" VerticalAlignment="Top" Width="138" Height="40" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Button x:Name="addButton" FontSize="20" Content="Добавить" HorizontalAlignment="Left" Margin="23.4,59,-25.4,0" VerticalAlignment="Top" Width="138" Height="40" Grid.ColumnSpan="2" Grid.Column="1" Click="addButton_Click"/>
-        <Button Name="ChangeButton" FontSize="20" Grid.ColumnSpan="2" Content="Изменить" Grid.Column="1" HorizontalAlignment="Left" Margin="23.4,119,-25.4,0" VerticalAlignment="Top" Width="138" Height="40"/>
-        <Button x:Name="searchButton" FontSize="12" Content="Найти" HorizontalAlignment="Left" Margin="22.4,233,0,0" VerticalAlignment="Top" Width="44" Height="19" Grid.Column="1"/>
-        <TextBox x:Name ="SearchText" HorizontalAlignment="Left" Height="19" Margin="71.4,233,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.357,0.537" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button x:Name="removeButton" FontSize="20" Content="Удалить" HorizontalAlignment="Left" Margin="292,87,-188.4,0" VerticalAlignment="Top" Width="138" Height="40" Click="RemoveTeacher"/>
+        <Button x:Name="addButton" FontSize="20" Content="Добавить" HorizontalAlignment="Left" Margin="292,-3,-188.4,0" VerticalAlignment="Top" Width="138" Height="40" Click="AddTeacher"/>
+        <Button Name="ChangeButton" FontSize="20" Content="Изменить" HorizontalAlignment="Left" Margin="292,42,-188.4,0" VerticalAlignment="Top" Width="138" Height="40" Click="ChangeTeacher"/>
+        <TextBox x:Name ="SearchText" HorizontalAlignment="Left" Height="19" Margin="292,164,-188.4,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="138" RenderTransformOrigin="0.357,0.537"/>
+        <Button FontSize="20" Content="Назад" HorizontalAlignment="Left" Margin="292,239,-188.4,0" VerticalAlignment="Top" Width="138" Height="39" Click="BackButton"/>
+        <Label Content="Поиск" FontSize="20" Margin="326,128,-188.4,109.4"/>
     </Grid>
 </Window>

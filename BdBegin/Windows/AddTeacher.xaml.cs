@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BdBegin.Data;
+using BdBegin.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -20,6 +22,7 @@ namespace BdBegin.Windows
     /// </summary>
     public partial class AddTeacher : Window
     {
+        private readonly IDataApp _dataApp;
         public AddTeacher()
         {
             InitializeComponent();
@@ -27,43 +30,43 @@ namespace BdBegin.Windows
 
         private void AddSpecialsButton(object sender, RoutedEventArgs e)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-TAH07PT; Initial Catalog=Karataev; Integrated Security=True");
-            connection.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "Insert into Teachers (First_Name_Teacher,Last_Name_Teacher,Mid_Name_Teacher,Address_Teacher,Cod_Subject,Number_Group)values(@nm,@ln,@mn,@ad,@cs,@ng)";
-            cmd.Parameters.AddWithValue("@ct", CodTeacher.Text);
-            cmd.Parameters.AddWithValue("@nm", NameTeacher.Text);
-            cmd.Parameters.AddWithValue("@ln", LastNameTeacher.Text);
-            cmd.Parameters.AddWithValue("@mn", MidNameTeacher.Text);
-            cmd.Parameters.AddWithValue("@ad", AddressTeacher.Text);
-            cmd.Parameters.AddWithValue("@cs", CodSubject.Text);
-            cmd.Parameters.AddWithValue("@ng", NumberGroups.Text);
-            if ((NameTeacher.Text == "") && (LastNameTeacher.Text == "") && (MidNameTeacher.Text == "") && (AddressTeacher.Text == "") && (CodSubject.Text == "") && (NumberGroups.Text == ""))
-            {
-                MessageBox.Show("Данные не веедены, повторите попытку");
-                return;
+            //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-TAH07PT; Initial Catalog=Karataev; Integrated Security=True");
+            //connection.Open();
+            //SqlCommand cmd = new SqlCommand();
+            //cmd.CommandText = "Insert into Teachers (First_Name_Teacher,Last_Name_Teacher,Mid_Name_Teacher,Address_Teacher,Cod_Subject,Number_Group)values(@nm,@ln,@mn,@ad,@cs,@ng)";
+            //cmd.Parameters.AddWithValue("@ct", CodTeacher.Text);
+            //cmd.Parameters.AddWithValue("@nm", NameTeacher.Text);
+            //cmd.Parameters.AddWithValue("@ln", LastNameTeacher.Text);
+            //cmd.Parameters.AddWithValue("@mn", MidNameTeacher.Text);
+            //cmd.Parameters.AddWithValue("@ad", AddressTeacher.Text);
+            //cmd.Parameters.AddWithValue("@cs", CodSubject.Text);
+            //cmd.Parameters.AddWithValue("@ng", NumberGroups.Text);
+            //if ((NameTeacher.Text == "") && (LastNameTeacher.Text == "") && (MidNameTeacher.Text == "") && (AddressTeacher.Text == "") && (CodSubject.Text == "") && (NumberGroups.Text == ""))
+            //{
+            //    MessageBox.Show("Данные не веедены, повторите попытку");
+            //    return;
 
-            }
+            //}
 
 
-            cmd.Connection = connection;
-            int a = cmd.ExecuteNonQuery();
-            if (a == 1)
-            {
-                MessageBox.Show("Запись успешно добавлена");
-                NameTeacher.Text = "";
-                LastNameTeacher.Text = "";
-                MidNameTeacher.Text = "";
-                AddressTeacher.Text = "";
-                CodSubject.Text = "";
-                NumberGroups.Text = "";
+            //cmd.Connection = connection;
+            //int a = cmd.ExecuteNonQuery();
+            //if (a == 1)
+            //{
+            //    MessageBox.Show("Запись успешно добавлена");
+            //    NameTeacher.Text = "";
+            //    LastNameTeacher.Text = "";
+            //    MidNameTeacher.Text = "";
+            //    AddressTeacher.Text = "";
+            //    CodSubject.Text = "";
+            //    NumberGroups.Text = "";
          
-            }
-            else
-            {
-                MessageBox.Show("Ошибка ввода, повторите попытку!");
-                return;
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Ошибка ввода, повторите попытку!");
+            //    return;
+            //}
         }
 
         private void BackButton(object sender, RoutedEventArgs e)
@@ -71,6 +74,42 @@ namespace BdBegin.Windows
             Windows.Teachers TeachersObj = new Windows.Teachers();
             TeachersObj.Visibility = Visibility.Visible;
             this.Close();
+        }
+
+        private void AddTeachersButton(object sender, RoutedEventArgs e)
+        {
+            if (NameTeacher.Text == "" && LastNameTeacher.Text == "" && MidNameTeacher.Text=="")
+            {
+                MessageBox.Show("Данные не веедены, повторите попытку");
+                return;
+
+            }
+            var teacher = new Teacher()
+            {
+                FirstName = this.NameTeacher.Text,
+                LastName = this.LastNameTeacher.Text,
+                MiddleName = this.MidNameTeacher.Text,
+              
+            };
+            try
+            {
+              
+               // _dataApp.Teachers.Add(teacher);
+                int a = 1;
+                if (a == 1)
+                {
+                    MessageBox.Show("Запись успешно добавлена");
+                    NameTeacher.Text = "";
+                    LastNameTeacher.Text = "";
+                    MidNameTeacher.Text = "";  
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Ошибка! Повторите попытку.");
+
+            }
+
         }
     }
 }

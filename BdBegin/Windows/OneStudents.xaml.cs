@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BdBegin.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace BdBegin.Windows
     public partial class OneStudents : Window
     {
        
-        public OneStudents(StudentsClass student)
+        public OneStudents(Student student)
         {
             InitializeComponent();
             SetProperties(student);
@@ -29,12 +30,15 @@ namespace BdBegin.Windows
 
         }
 
-        private void SetProperties(StudentsClass student)
+        private void SetProperties(Student student)
         {
             Name.Content = student.LastName + " " + student.FirstName + " " + " " + student.MidName;
 
             Address.Content = student.Address;
             Course.Content = student.Course;
+            Birthday.Content = student.BirthDay.ToShortDateString();
+            Group.Content = student.Group;
+            AbsScore.Content = student.AbsScore;
         }
 
         public OneStudents()

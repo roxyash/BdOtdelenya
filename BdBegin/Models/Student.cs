@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace BdBegin.Windows
+namespace BdBegin.Models
 {
-    public class StudentsClass
+    public class Student
     {
-        public StudentsClass(int id)
+        public Student(int id)
         {
-            NumberStudents = id;
+            Id = id;
         }
 
-        public int NumberStudents { get; }
+        public int Id { get; }
         public int OrderNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -17,5 +17,8 @@ namespace BdBegin.Windows
         public string Address { get; set; }
         public DateTime BirthDay { get; set; }
         public int Course { get; set; }
+        public string Group {get;set;}
+
+        public double AbsScore { get; set; }
     }
 }

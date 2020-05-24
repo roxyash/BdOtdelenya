@@ -1,5 +1,8 @@
-﻿using System;
+﻿using BdBegin.Data;
+using BdBegin.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -21,10 +24,12 @@ namespace BdBegin.Windows
     /// </summary>
     public partial class Teachers : Window
     {
+        private ObservableCollection<Teacher> _teachers = new ObservableCollection<Teacher>();
+        private IDataApp dataApp = ((App)Application.Current).DataApp;
         public Teachers()
         {
             InitializeComponent();
-            binddatagrid();
+            LoadDataGridTeacher();
         }
 
         private void BackButton(object sender, RoutedEventArgs e)
@@ -34,25 +39,45 @@ namespace BdBegin.Windows
             this.Close();
         }
 
-        public void binddatagrid()
+        public void LoadDataGridTeacher()
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-TAH07PT; Initial Catalog=Karataev; Integrated Security=True");
-            connection.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "select * From Teachers";
-            cmd.Connection = connection;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Teachers");
-            da.Fill(dt);
-            TeachersGrid.ItemsSource = dt.DefaultView;
+            List<Teacher> teachers = dataApp.Teachers.GetAll();
+            teachers.ForEach(_teachers.Add);
+            TeachersGrid.ItemsSource = _teachers;
+            //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-TAH07PT; Initial Catalog=Karataev; Integrated Security=True");
+            //connection.Open();
+            //SqlCommand cmd = new SqlCommand();
+            //cmd.CommandText = "select * From Teachers";
+            //cmd.Connection = connection;
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //DataTable dt = new DataTable("Teachers");
+            //da.Fill(dt);
+            //TeachersGrid.ItemsSource = dt.DefaultView;
 
         }
 
-        private void addButton_Click(object sender, RoutedEventArgs e)
+        private void AddTeacher(object sender, RoutedEventArgs e)
         {
+            var std = new Teacher()
+            {
+                FirstName = "имя",
+                LastName = "фамилия",
+                MiddleName = "отчество",
+                
+            };
             Windows.AddTeacher AddTeachersObj = new Windows.AddTeacher();
             AddTeachersObj.Visibility = Visibility.Visible;
             this.Close();
+        }
+
+        private void ChangeTeacher(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveTeacher(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
